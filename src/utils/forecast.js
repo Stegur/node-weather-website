@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Локация не найдена', undefined);
         } else {
-            callback(undefined, `${body.daily.data[0].summary} Сейчас ${body.currently.temperature}°C. Вероятность дождя ${body.currently.precipProbability}%`);
+            callback(undefined, `${body.daily.data[0].summary} Сейчас ${body.currently.temperature}°C. Самая высокая температура сегодня - ${body.daily.data[0].temperatureHigh}°C, а самая низкая - ${body.daily.data[0].temperatureLow}°C. Вероятность дождя ${body.currently.precipProbability}%.`);
         }
     });
 };
